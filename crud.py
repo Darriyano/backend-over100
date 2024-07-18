@@ -10,7 +10,6 @@ def get_robot(db: Session, robot_id: int):
 
 
 def get_robots(db: Session, skip: int = 0, limit: int = 10):
-    print(123)
     return db.query(models.Robot).offset(skip).limit(limit).all()
 
 
