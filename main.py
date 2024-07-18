@@ -34,6 +34,11 @@ def read_robot(robot_id: int, db: Session = Depends(get_db)):
 
 
 # List all robot names
+
+@app.post("/")
+def read_robots(strList : List[str]):
+    return []
+
 @app.get("/get_robots_name", response_model=List[schemas.RobotName])
 def read_robots(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
     robots = crud.get_robots(db, skip=skip, limit=limit)
